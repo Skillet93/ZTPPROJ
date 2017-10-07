@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PROJ1", "PROJ1", "{DD6364C5
 		PROJ1\Architecture.xml = PROJ1\Architecture.xml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROJ1", "PROJ1\PROJ1\PROJ1.csproj", "{6ABD0B7E-2173-42F2-8CC0-3E6FCA713ED1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PROJ1", "PROJ1\PROJ1.csproj", "{6ABD0B7E-2173-42F2-8CC0-3E6FCA713ED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
