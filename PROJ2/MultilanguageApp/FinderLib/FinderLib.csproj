@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsRs\Ztp\Constants\LanguageConstatnts.cs" />
+    <Compile Include="AsRs\Ztp\Constants\LanguageConstants.cs" />
     <Compile Include="AsRs\Ztp\Elements\LanguageElement.cs" />
     <Compile Include="AsRs\Ztp\Finder\ILanguageFinder.cs" />
     <Compile Include="AsRs\Ztp\Initializer\FinderChainInitializer.cs" />
