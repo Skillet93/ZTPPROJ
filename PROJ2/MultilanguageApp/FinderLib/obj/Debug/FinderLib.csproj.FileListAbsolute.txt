@@ -1,0 +1,14 @@
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\FinderLib.dll
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\FinderLib.pdb
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\Autofac.dll
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\mscorlib.dll
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\Autofac.xml
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\pl\mscorlib.resources.dll
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\normidna.nlp
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\normnfc.nlp
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\normnfd.nlp
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\normnfkc.nlp
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\bin\Debug\normnfkd.nlp
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\obj\Debug\FinderLib.csprojResolveAssemblyReference.cache
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\obj\Debug\FinderLib.dll
+C:\Users\1\RiderProjects\MultilanguageApp\FinderLib\obj\Debug\FinderLib.pdb
