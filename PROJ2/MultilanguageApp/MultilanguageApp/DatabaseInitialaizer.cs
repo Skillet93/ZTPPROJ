@@ -2,7 +2,7 @@
 
 namespace MultilanguageApp
 {
-    public class DatabaseInitialaizer
+    public class DatabaseInitializer
     {
         public static IMongoCollection<T> GetCollection<T>(string collection)
         {
