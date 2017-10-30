@@ -21,3 +21,5 @@ C:\Users\1\RiderProjects\MultilanguageApp\MultilanguageApp\bin\Debug\Autofac.dll
 C:\Users\1\RiderProjects\MultilanguageApp\MultilanguageApp\bin\Debug\FinderLib.dll
 C:\Users\1\RiderProjects\MultilanguageApp\MultilanguageApp\bin\Debug\FinderLib.pdb
 C:\Users\1\RiderProjects\MultilanguageApp\MultilanguageApp\bin\Debug\Autofac.xml
+C:\Users\kisuo\Source\Repos\ZTPPROJ\PROJ2\MultilanguageApp\MultilanguageApp\obj\Debug\MultilanguageApp.exe
+C:\Users\kisuo\Source\Repos\ZTPPROJ\PROJ2\MultilanguageApp\MultilanguageApp\obj\Debug\MultilanguageApp.pdb

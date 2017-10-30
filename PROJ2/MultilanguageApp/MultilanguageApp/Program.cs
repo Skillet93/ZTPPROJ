@@ -32,7 +32,7 @@ namespace MultilanguageApp
         public static void Main(string[] args)
         {
             
-            var collection = DatabaseInitialaizer.GetCollection<Car>(Constants.Db.CollectionNameCar);
+            var collection = DatabaseInitializer.GetCollection<Car>(Constants.Db.CollectionNameCar);
             var result = collection.AsQueryable().First(o => o.Brand.Equals("BMW"));
             try
             {

@@ -15,7 +15,7 @@ namespace FinderLib.AsRs.Ztp.Selectors
 
         public override LanguageElement Find(ICollection<LanguageElement> collection, string langCode)
         {
-            return FindByLanguage(collection, LanguageConstatnts.Pl);
+            return FindByLanguage(collection, LanguageConstants.Pl);
         }
     }
 }
