@@ -10,8 +10,8 @@ namespace GUSData.AsRs.Ztp.Xml
 {
     public class XmlLoader : IXmlLoader
     {
-        private XmlFileContainer _xmlFileContainer;
-        private Logger _consoleLog;
+        private readonly Logger _consoleLog;
+        private readonly XmlFileContainer _xmlFileContainer;
 
         public XmlLoader()
         {

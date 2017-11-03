@@ -18,20 +18,20 @@ namespace GUSData.AsRs.Ztp.Collection
             return CollectionContainer.TercProvinceList.Find(x => x.ProvinceId == provinceId).Name;
         }
 
-        public string GetContyName(CountySimpleData county)
+        public string GetCountyName(CountySimpleData county)
         {
-            return CollectionContainer.TercCountyList.Find(x => IsSpecifiedConty(x, county)).Name;
-        }
-
-        private static bool IsSpecifiedConty(TercCounty x, CountySimpleData county)
-        {
-            return x.CountyId == county.CountyId && x.ProvinceId == county.ProvinceId;
+            return CollectionContainer.TercCountyList.Find(x => IsSpecifiedCounty(x, county)).Name;
         }
 
 
         public string GetDistrictName(DistrictSimpleData districtData)
         {
             return CollectionContainer.TercDistrictList.Find(x => IsSpecifiedDistrict(x, districtData)).Name;
+        }
+
+        private static bool IsSpecifiedCounty(TercCounty x, CountySimpleData county)
+        {
+            return x.CountyId == county.CountyId && x.ProvinceId == county.ProvinceId;
         }
 
         private static bool IsSpecifiedDistrict(TercElement x, DistrictSimpleData districtData)

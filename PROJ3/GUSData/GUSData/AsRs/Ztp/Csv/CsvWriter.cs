@@ -9,8 +9,8 @@ namespace GUSData.AsRs.Ztp.Csv
 {
     public class CsvWriter : ICsvWriter
     {
-        private Logger _writerLog;
-        private Logger _operationLog;
+        private readonly Logger _operationLog;
+        private readonly Logger _writerLog;
 
         public CsvWriter(Logger writerLog, Logger consoleLog)
         {

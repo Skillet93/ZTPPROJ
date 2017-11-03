@@ -5,14 +5,14 @@ using GUSData.AsRs.Ztp.Xml;
 
 namespace GUSData
 {
-    class Program
+    internal class Program
     {
         private static IContainer _container;
         private static IXmlConverter _converter;
         private static ICsvWriter _writer;
         private static IXmlLoader _loader;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             _container = DependencyConfigurer.ConfigureDependencies();
             ResolveDependencies();

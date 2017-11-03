@@ -10,9 +10,7 @@ namespace GUSData.AsRs.Ztp.Xml
         {
             var convertedNum = -1;
             if (!string.IsNullOrEmpty(element.Element(attribute)?.Value))
-            {
                 convertedNum = int.Parse(element.Element(attribute)?.Value);
-            }
             return convertedNum;
         }
 
@@ -20,9 +18,7 @@ namespace GUSData.AsRs.Ztp.Xml
         {
             var name = "";
             if (!string.IsNullOrEmpty(element.Element(attribute)?.Value))
-            {
                 name = element.Element(attribute)?.Value;
-            }
             return name;
         }
 

@@ -7,7 +7,7 @@ namespace GUSData.AsRs.Ztp.Collection
     {
         City GetCity(int cityId);
         string GetProvinceName(int provinceId);
-        string GetContyName(CountySimpleData county);
+        string GetCountyName(CountySimpleData county);
         string GetDistrictName(DistrictSimpleData districtData);
     }
 }

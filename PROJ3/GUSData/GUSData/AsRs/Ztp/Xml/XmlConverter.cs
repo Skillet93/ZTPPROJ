@@ -13,10 +13,9 @@ namespace GUSData.AsRs.Ztp.Xml
 {
     public class XmlConverter : IXmlConverter
     {
-        private ICollectionElementsParser _collectionElementsParser;
-        private ICollectionSeparator _collectionSeparator;
-        private Logger _consoleLog;
-        private XmlFileContainer XmlFileContainer { get; set; }
+        private readonly ICollectionElementsParser _collectionElementsParser;
+        private readonly ICollectionSeparator _collectionSeparator;
+        private readonly Logger _consoleLog;
 
 
         public XmlConverter(ICollectionSeparator collectionSeparator, Logger consoleLog,
@@ -26,6 +25,8 @@ namespace GUSData.AsRs.Ztp.Xml
             _consoleLog = consoleLog;
             _collectionElementsParser = collectionElementsParser;
         }
+
+        private XmlFileContainer XmlFileContainer { get; set; }
 
         public void LoadData(XmlFileContainer fileContainer)
         {
@@ -40,9 +41,7 @@ namespace GUSData.AsRs.Ztp.Xml
         {
             if (CollectionContainer.Streets != null &&
                 CollectionContainer.Streets.Any())
-            {
                 return CollectionContainer.Streets;
-            }
             throw new NullReferenceException("Streets collection is null or empty");
         }
 
@@ -57,7 +56,7 @@ namespace GUSData.AsRs.Ztp.Xml
                     ProvinceId = XmlParserUtil.GetProperValue(tercElement, Constants.XmlAttributeConstant.Woj),
                     CountyId = XmlParserUtil.GetProperValue(tercElement, Constants.XmlAttributeConstant.Pow),
                     DistrictId = XmlParserUtil.GetProperValue(tercElement, Constants.XmlAttributeConstant.Gmi),
-                    Name = tercElement.Element(Constants.XmlAttributeConstant.Nazwa)?.Value,
+                    Name = tercElement.Element(Constants.XmlAttributeConstant.Nazwa)?.Value
                 };
             CollectionContainer.TercAllElementList = tercElements.ToList();
             LoggUtil.LoggingTime(watch, _consoleLog, Constants.SetConstant.TercConversion);
@@ -71,17 +70,17 @@ namespace GUSData.AsRs.Ztp.Xml
                 from simcElement in XmlFileContainer.SimcSet.Descendants(Constants.XmlAttributeConstant.Row)
                 select new City
                 {
-                    CitytId = XmlParserUtil.GetProperValue(simcElement, Constants.XmlAttributeConstant.Sym),
+                    CityId = XmlParserUtil.GetProperValue(simcElement, Constants.XmlAttributeConstant.Sym),
                     ProvinceName =
                         _collectionElementsParser.GetProvinceName(
                             XmlParserUtil.GetProperValue(simcElement, Constants.XmlAttributeConstant.Woj)),
-                    CountyName = _collectionElementsParser.GetContyName(XmlParserUtil.GetCountyData(simcElement)),
+                    CountyName = _collectionElementsParser.GetCountyName(XmlParserUtil.GetCountyData(simcElement)),
                     DistrictName =
                         _collectionElementsParser.GetDistrictName(XmlParserUtil.GetDistrictData(simcElement)),
-                    CitytName = simcElement.Element(Constants.XmlAttributeConstant.Nazwa)?.Value,
+                    CitytName = simcElement.Element(Constants.XmlAttributeConstant.Nazwa)?.Value
                 };
 
-            CollectionContainer.Citites = citiesCollection.ToDictionary(x => x.CitytId, x => x);
+            CollectionContainer.Citites = citiesCollection.ToDictionary(x => x.CityId, x => x);
             LoggUtil.LoggingTime(watch, _consoleLog, Constants.SetConstant.SimcConversion);
         }
 
@@ -96,7 +95,7 @@ namespace GUSData.AsRs.Ztp.Xml
                     StreetId = XmlParserUtil.GetProperValue(ulicElement, Constants.XmlAttributeConstant.SymUl),
                     City = _collectionElementsParser.GetCity(
                         XmlParserUtil.GetProperValue(ulicElement, Constants.XmlAttributeConstant.Sym)),
-                    StreetName = XmlParserUtil.GetFullStreetName(ulicElement),
+                    StreetName = XmlParserUtil.GetFullStreetName(ulicElement)
                 };
             CollectionContainer.Streets = streetCollection.ToList();
             LoggUtil.LoggingTime(watch, _consoleLog, Constants.SetConstant.UlicConversion);
