@@ -6,6 +6,7 @@ namespace CarPresentation.Data
     {
         public static IMongoDatabase Initialize()
         {
+            //add exception handling
             var client = new MongoClient(Constants.Db.DatabaseUrl);
             return client.GetDatabase(Constants.Db.DatabaseName);
         }
