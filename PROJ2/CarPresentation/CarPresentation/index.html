@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Car presentation</title>
+    <link rel="stylesheet" href="/Content/site.css"/>
+    <link rel="stylesheet" href="/Content/bootstrap.css"/>
+    <link rel="stylesheet" href="/Content/bootstrap-theme.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Search car details</h1>
+    </div>
+    <div id="error" class="alert alert-danger" style="display: none">
+        No details found for this car!
+    </div>
+</div>
+
+<form>
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="modelName">Model</label>
+                    <input type="text" class="form-control" id="modelName" placeholder="Model" required/>
+                </div>
+                <div class="col-md-6">
+                    <label for="langCode">Language</label>
+                    <input type="text" class="form-control" id="langCode" placeholder="Language Code" required/>
+                </div>
+            </div>
+        </div>
+        <input class="btn btn-default" type="button" value="Search" onclick="find();"/>
+    </div>
+</form>
+
+<div class="container">
+    <p class="lead">
+    <div class="row">
+        <div class="col-md-3"><strong>Brand:</strong></div>
+        <div class="col-md-6"><span id="carBrand"></span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><strong>Model:</strong></div>
+        <div class="col-md-6"><span id="carModel"></span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><strong>Max speed:</strong></div>
+        <div class="col-md-6"><span id="carMaxSpeed"></span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><strong>Number of seats:</strong></div>
+        <div class="col-md-6"><span id="carSeats"></span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><strong>Description language:</strong></div>
+        <div class="col-md-6"><span class="label label-success" id="carDescriptionLang"></span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"><strong>Description:</strong></div>
+        <div class="col-md-6"><span id="carDescription"></span></div>
+    </div>
+
+</div>
+
+
+<script>
+    var uri = 'api/car';
+
+    function find() {
+        var model = $('#modelName').val();
+        var langCode = $('#langCode').val();
+        $.getJSON(uri + '/model/' + model + '/lang/' + langCode)
+            .done(function (data) {
+                $('#carBrand').text(data.Brand);
+                $('#carModel').text(data.Model);
+                $('#carMaxSpeed').text(data.MaxSpeed);
+                $('#carSeats').text(data.Seats);
+                $('#carDescriptionLang').text(data.DescriptionLang);
+                $('#carDescription').text(data.Description);
+                $('#error').hide();
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                clear();
+                $('#error').show();
+            });
+    }
+
+    function clear() {
+        $('#carBrand').text('');
+        $('#carModel').text('');
+        $('#carMaxSpeed').text('');
+        $('#carSeats').text('');
+        $('#carDescriptionLang').text('');
+        $('#carDescription').text('');
+    }
+</script>
+<script src="/Scripts/jquery-1.9.1.js"></script>
+<script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/site.js"></script>
+</body>
+</html>
